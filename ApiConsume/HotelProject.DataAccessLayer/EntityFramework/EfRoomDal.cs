@@ -11,5 +11,6 @@ namespace HotelProject.DataAccessLayer.EntityFramework
         {
             
         }
+
     }
 }
