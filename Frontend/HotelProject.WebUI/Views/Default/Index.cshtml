@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+@await Component.InvokeAsync("_HeadViewComponentPartial")
+<body>
+    <div class="container-xxl bg-white p-0">
+     
+        @await Component.InvokeAsync("_SpinnerViewComponentPartial")
+ 
+        @await Component.InvokeAsync("_NavbarViewComponentPartial")
+       
+        @await Component.InvokeAsync("_SliderViewComponentPartial") 
+     
+        @await Component.InvokeAsync("_RezervationViewComponentPartial")
+ 
+        @await Component.InvokeAsync("_AboutViewComponentPartial")
+  
+        @await Component.InvokeAsync("_OurRoomsViewComponentPartial")
+
+        @await Component.InvokeAsync("_TrailerViewComponentPartial")
+     
+        @await Component.InvokeAsync("_ServiceViewComponentPartial")
+   
+        @await Component.InvokeAsync("_TestimonialViewComponentPartial")
+     
+        @await Component.InvokeAsync("_TeamViewComponentPartial")
+
+        @await Html.PartialAsync("_SubscribePartial")
+    
+        @await Component.InvokeAsync("_FooterViewComponentPartial")
+     
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    
+    @await Component.InvokeAsync("_ScriptViewComponentPartial")
+</body>
+
+</html> 
