@@ -14,7 +14,7 @@ namespace HotelProject.EntityLayer.Concrete
 
         public string Mail { get; set; }
 
-        public DateTime Checkin { get; set; }
+        public DateTime CheckIn { get; set; }
 
         public DateTime CheckOut { get; set; }
 

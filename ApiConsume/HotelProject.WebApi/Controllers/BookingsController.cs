@@ -34,7 +34,7 @@ namespace HotelProject.WebApi.Controllers
             _bookingsService.TDelete(values);
             return Ok();
         }
-        [HttpPut]
+        [HttpPut("UpdateBooking")]
         public IActionResult UpdateBooking(Booking booking)
         {
             _bookingsService.TUpdate(booking);
@@ -46,6 +46,12 @@ namespace HotelProject.WebApi.Controllers
             var values = _bookingsService.TGetByID(id);
             return Ok(values);
         
+        }
+        [HttpPut("UpdateBookingApprovedStatus")]
+        public IActionResult UpdateBookingApprovedStatus(Booking booking)
+        {
+            _bookingsService.TBookingStatusChangeApproved(booking);
+            return Ok();
         }
     }
 }
