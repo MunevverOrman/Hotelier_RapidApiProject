@@ -6,6 +6,10 @@ using Microsoft.Extensions.Hosting;
 using HotelProject.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using HotelProject.EntityLayer.Concrete;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using HotelProject.WebUI.Dtos.GuestDto;
+using HotelProject.WebUI.ValidationRules.GuestValidationRules;
 
 
 namespace HotelProject.WebUI
@@ -26,6 +30,9 @@ namespace HotelProject.WebUI
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();//Identity servisini ekle
             services.AddHttpClient();//HttpClient servisini ekle
             services.AddControllersWithViews();
+            services.AddFluentValidationAutoValidation();
+            services.AddTransient<IValidator<CreateGuestDto>, CreateGuestValidator>();
+            services.AddTransient<IValidator<UpdateGuestDto>, UpdateGuestValidator>();
             services.AddAutoMapper(typeof(Startup));
         }
 
@@ -44,6 +51,7 @@ namespace HotelProject.WebUI
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

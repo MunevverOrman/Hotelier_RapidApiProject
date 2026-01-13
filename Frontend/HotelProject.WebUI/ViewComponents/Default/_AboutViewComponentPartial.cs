@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.WebUI.ViewComponents.Default
 {
-    public class _AboutViewComponentPartial: ViewComponent
+    public class _AboutViewComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
@@ -19,14 +19,16 @@ namespace HotelProject.WebUI.ViewComponents.Default
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage=await client.GetAsync("https://localhost:44398/api/Abouts");
+            var responseMessage = await client.GetAsync("https://localhost:44398/api/Abouts");
+
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData=await responseMessage.Content.ReadAsStringAsync();
-                var values=JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
                 return View(values);
             }
-            return View();
+
+            return View(new List<ResultAboutDto>());
         }
     }
 }
