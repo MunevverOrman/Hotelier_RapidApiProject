@@ -10,6 +10,9 @@ using FluentValidation.AspNetCore;
 using FluentValidation;
 using HotelProject.WebUI.Dtos.GuestDto;
 using HotelProject.WebUI.ValidationRules.GuestValidationRules;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using System;
 
 
 namespace HotelProject.WebUI
@@ -34,6 +37,20 @@ namespace HotelProject.WebUI
             services.AddTransient<IValidator<CreateGuestDto>, CreateGuestValidator>();
             services.AddTransient<IValidator<UpdateGuestDto>, UpdateGuestValidator>();
             services.AddAutoMapper(typeof(Startup));
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                                .RequireAuthenticatedUser()
+                                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.LoginPath = "/Login/Index";
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,8 +64,10 @@ namespace HotelProject.WebUI
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404","?code={0}");
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+          
             app.UseRouting();
 
             app.UseAuthentication();
