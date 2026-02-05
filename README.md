@@ -7,7 +7,9 @@ Modern web uygulamalarında yaygın olarak kullanılan backend–frontend ayrım
 Backend tarafı tamamen ASP.NET Core Web API ile geliştirilmiş frontend tarafında ise ASP.NET Core MVC kullanılarak API üzerinden veri tüketimi sağlanmıştır.
 
 🎯 Proje Amacı
+
 Bu projenin temel amacı;
+
 🔗 API tabanlı mimariyi gerçek bir senaryo üzerinde uygulamak 
 🧠 ASP.NET Core Web API ile backend geliştirme pratiği kazanmak  
 🖥 MVC üzerinden API Consume mantığını kavramak  
