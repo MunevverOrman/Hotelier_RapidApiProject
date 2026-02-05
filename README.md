@@ -8,6 +8,7 @@ Modern web uygulamalarında yaygın olarak kullanılan backend–frontend ayrım
 Backend tarafı tamamen ASP.NET Core Web API ile geliştirilmiş frontend tarafında ise ASP.NET Core MVC kullanılarak API üzerinden veri tüketimi sağlanmıştır.
 
 
+
 🎯 Proje Amacı
 
 Bu projenin temel amacı;
@@ -21,6 +22,7 @@ Bu projenin temel amacı;
 🔐 Güvenli kimlik doğrulama süreçlerini uygulamak  
 
 🧩 Katmanlı mimari ve temiz kod yapısını benimsemektir  
+
 
 
  🚀 Öne Çıkan Özellikler
@@ -65,8 +67,12 @@ Bu projenin temel amacı;
 
 📘 Swagger 
 
-📮 Postman  
+📮 Postman 
+
 🌍 Rapid API  
+
 🧩 Repository Design Pattern  
+
 🧱 N Tier Architecture  
+
 📦 DTO Layer  
