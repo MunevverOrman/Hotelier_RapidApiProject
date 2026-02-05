@@ -1,6 +1,15 @@
-﻿@model ResultInstagramFollowersDto
+﻿@functions {
+    string ValOrStatic(dynamic val, string fallback)
+    {
+        if (val == null) return fallback;
+        if (int.TryParse(val.ToString(), out int v) && v == 0) return fallback;
+        return val.ToString();
+    }
+}
 
 <div class="row">
+
+    <!-- FACEBOOK (ZATEN STATİK) -->
     <div class="col-lg-3 col-sm-6">
         <div class="card">
             <div class="social-graph-wrapper widget-facebook">
@@ -8,45 +17,22 @@
             </div>
             <div class="row">
                 <div class="col-6 border-right">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                        <h4 class="m-1">89k</h4>
-                        <p class="m-0">Friends</p>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                        <h4 class="m-1">119k</h4>
-                        <p class="m-0">Followers</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-    
-    <div class="col-lg-3 col-sm-6">
-        <div class="card">
-            
-                <div class="social-graph-wrapper widget-googleplus">
-                <span class="s-icon"><i class="fa fa-google-plus"></i></span>
-              
-            </div>
-            <div class="row">
-                <div class="col-6 border-right">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                        <h4 class="m-1">@Model.followers</h4>
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">5800</h4>
                         <p class="m-0">Takipçiler</p>
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                            <h4 class="m-1">@Model.following</h4>
-                        <p class="m-0">Takip Edilenler</p>
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">196</h4>
+                        <p class="m-0">Takip Ettiklerin</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- LINKEDIN -->
     <div class="col-lg-3 col-sm-6">
         <div class="card">
             <div class="social-graph-wrapper widget-linkedin">
@@ -54,21 +40,45 @@
             </div>
             <div class="row">
                 <div class="col-6 border-right">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                        <h4 class="m-1">89k</h4>
-                        <p class="m-0">Friends</p>
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">@ValOrStatic(ViewBag.v5, "500+")</h4>
+                        <p class="m-0">Takipçiler</p>
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                        <h4 class="m-1">119k</h4>
-                        <p class="m-0">Followers</p>
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">500+</h4>
+                        <p class="m-0">Takip Ettiklerin</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  
+
+    <!-- INSTAGRAM -->
+    <div class="col-lg-3 col-sm-6">
+        <div class="card">
+            <div class="social-graph-wrapper widget-googleplus">
+                <span class="s-icon">Instagram</span>
+            </div>
+            <div class="row">
+                <div class="col-6 border-right">
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">@ValOrStatic(ViewBag.v1, "1240")</h4>
+                        <p class="m-0">Takipçiler</p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">@ValOrStatic(ViewBag.v2, "315")</h4>
+                        <p class="m-0">Takip Ettiklerin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TWITTER -->
     <div class="col-lg-3 col-sm-6">
         <div class="card">
             <div class="social-graph-wrapper widget-twitter">
@@ -76,18 +86,19 @@
             </div>
             <div class="row">
                 <div class="col-6 border-right">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                        <h4 class="m-1">89k</h4>
-                        <p class="m-0">Friends</p>
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">@ValOrStatic(ViewBag.v3, "860")</h4>
+                        <p class="m-0">Takipçiler</p>
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="pt-3 pb-3 pl-0 pr-0 text-center">
-                        <h4 class="m-1">119k</h4>
-                        <p class="m-0">Followers</p>
+                    <div class="pt-3 pb-3 text-center">
+                        <h4 class="m-1">@ValOrStatic(ViewBag.v4, "420")</h4>
+                        <p class="m-0">Takip Ettiklerin</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
