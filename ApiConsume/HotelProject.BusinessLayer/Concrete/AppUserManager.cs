@@ -14,14 +14,19 @@ namespace HotelProject.BusinessLayer.Concrete
             _appUserDal = appUserDal;
         }
 
+        public int TAppUserCount()
+        {
+            return _appUserDal.AppUserCount();
+        }
+
         public void TDelete(AppUser t)
         {
-            throw new System.NotImplementedException();
+            _appUserDal.Delete(t);
         }
 
         public AppUser TGetByID(int id)
         {
-            throw new System.NotImplementedException();
+            return _appUserDal.GetById(id);
         }
 
         public List<AppUser> TGetList()
@@ -31,12 +36,12 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public void TInsert(AppUser t)
         {
-            throw new System.NotImplementedException();
+            _appUserDal.Insert(t);
         }
 
         public void TUpdate(AppUser t)
         {
-            throw new System.NotImplementedException();
+            _appUserDal.Update(t);
         }
 
         public List<AppUser> TUserListWithWorklocation()

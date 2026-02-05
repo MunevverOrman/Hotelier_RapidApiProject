@@ -2,6 +2,7 @@
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.Repositories;
 using HotelProject.EntityLayer.Concrete;
+using System.Linq;
 
 namespace HotelProject.DataAccessLayer.EntityFramework
 {
@@ -12,5 +13,11 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             
         }
 
+        public int RoomCount()
+        {
+            var context = new Context();
+            var value= context.Rooms.Count();
+            return value;
+        }
     }
 }
