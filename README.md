@@ -76,3 +76,37 @@ Bu projenin temel amacı;
 🧱 N Tier Architecture  
 
 📦 DTO Layer  
+
+
+📸 Ekran Görüntüleri
+
+🔹 Banner
+![Banner](images/Banner.png.png)
+
+🔹 Booking
+![Booking](images/Booking.png.png)
+
+🔹 Contact
+![Contact](images/Contact.png.png)
+
+🔹 Reservation
+![Reservation](images/Reservation.png.png)
+
+🔹 Reservation List
+![Reservation List](images/Reservationlist.png.png)
+
+🔹 Room
+![Room](images/Room.png.png)
+
+ 🔹 Dashboard
+![Dashboard](images/dashboard.png.png)
+
+🔹 Dashboard 2
+![Dashboard 2](images/dashboard2.png.png)
+
+🔹 Mail
+![Mail](images/mail.png.png)
+
+🔹 Settings
+![Settings](images/settings.png.png)
+
